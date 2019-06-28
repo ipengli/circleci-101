@@ -11,6 +11,9 @@ jobs:
       - run:
           name: Run tests
           command: npm run test
+      - add_ssh_keys:
+          fingerprints:
+            - "af:6d:3a:ba:bc:ce:0c:fa:ed:2c:7b:9d:cd:3b:b6:b1"
       - deploy:
           name: Deploy
           command: ssh root@45.32.240.210 'cd /var/www/circleci-101 && git pull && /root/.nvm/versions/node/v6.11.0/bin/forever stop app.js && /root/.nvm/versions/node/v6.11.0/bin/forever start app.js'
