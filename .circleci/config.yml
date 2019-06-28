@@ -23,7 +23,10 @@ jobs:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
            at: my_workspace
+           
       - run: |
+          cat "my_workspace/echo-output";
+          cat my_workspace/echo-output
           if [[ $(cat my_workspace/echo-output) == "Tyring out workspaces" ]]; then
             echo "It worked!";
           else
