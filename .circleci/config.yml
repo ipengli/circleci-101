@@ -27,6 +27,7 @@ jobs:
       - run: |
           cat "my_workspace/echo-output";
           echo $(cat my_workspace/echo-output);
+          echo [[ $(cat my_workspace/echo-output) == "Tyring out workspaces" ]];
           if [[ $(cat my_workspace/echo-output) == "Tyring out workspaces" ]]; then
             echo "It worked!";
           else
